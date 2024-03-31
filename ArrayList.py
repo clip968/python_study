@@ -35,21 +35,34 @@ class ArrayList:
     def delete(self, pos):
         if not self.isEmpty() and 0 <= pos < self.size:
             e = self.array[pos]
-            for i in range(pos, self.size - 1):
+            for i in range(pos, self.size):
                 self.array[i] = self.array[i + 1]
             self.size -= 1
             return e
         else:
             print('Underflow Or Invalid Position')
+            
+    def replace(self, pos, e):
+        if 0 <= pos < self.size:
+            self.array[pos] = e
+            
+        else:pass
+    
+    def getEntry(self, pos):
+        if 0 <= pos < self.size:
+            return self.array[pos]
         
+        else:None
+            
 if __name__ == "__main__":
     L1 = ArrayList(50)
     L1.insert(0, 10)
     L1.insert(0, 20)
     L1.insert(1, 30)
-    L1.display()
     
-    print(L1.delete(2))
+    
+    print(L1.delete(0))
+    L1.display()
     
     
         

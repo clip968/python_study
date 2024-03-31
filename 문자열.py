@@ -6,4 +6,3 @@ str2 = "Hi"
 print(str1, "\"How are you\"")
 print(str1, "____\b\b\b\b")
 print(str1[0], str1[-1])
-
