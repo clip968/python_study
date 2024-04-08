@@ -29,9 +29,9 @@ if __name__ == '__main__':
     print(s2, '-->', checkBrackets(s2))
     print(s3, '-->', checkBrackets(s3))
     
-    filename = '5.txt'
-    inFile = open(filename, 'r')
-    str = inFile.read()
-    inFile.close()
+    # filename = '5.txt'
+    # inFile = open(filename, 'r')
+    # str = inFile.read()
+    # inFile.close()
     
     
