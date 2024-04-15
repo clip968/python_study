@@ -39,6 +39,14 @@ class CircularQueue:
     def peek(self):
         if not self.isEmpty():
             return self.queue[(self.front + 1) % self.capacity]
+        
+    def display2(self):
+        i = self.front
+        while(i != self.rear):
+            i = (i + 1) % self.capacity
+            print(self.queue[i], end='')
+        print()
+        
             
     
 if __name__ == "__main__":
