@@ -33,6 +33,6 @@ def iFibo(n):
     
     
 print('iPower : %d' %(iPower(2, 10)))
-print('rPower : %d' %(rPower(2, 10)))
+print('rPower : %d' %(rPower(3, 10)))
 print('rFibo : %d - count : %d' %(rFibo(10), count))
 print(iFibo(10))

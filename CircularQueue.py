@@ -26,8 +26,8 @@ class CircularQueue:
         
         while i != self.rear:
             i = (i + 1) % self.capacity
-            print('[%c] ' %self.queue[i], end='')
-            print()
+            print('[%c] ' %self.queue[i], end=' ')
+        print()
             
     def dequeue(self):
         if not self.isEmpty():
