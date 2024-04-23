@@ -17,7 +17,8 @@ class Polynomial():
                 
     def read(self):
         self.arr = list(map(int, input("Input degrees in order : ").split()))
-        self.length = len(self.arr)
+        for i in self.arr:
+            self.length += 1;
         
     def add(self, arrB):
         arrC = Polynomial()

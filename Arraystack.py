@@ -42,7 +42,7 @@ class Arraystack:
             self.push(temp)
             
     def display(self):
-        print(self.stack[self.top::-1])
+        print(self.stack[:self.top+ 1])
         
 
 if __name__ == '__main__':
