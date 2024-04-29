@@ -42,4 +42,3 @@ if __name__ == "__main__":
     Q.sortedqueue(5)
     Q.sortedqueue(6)
     Q.display()
-        

@@ -21,4 +21,4 @@ if __name__ == '__main__':
     str = '8 2 3 / - 3 2 * +'
     expr = str.split()  
     
-    print(expr, '-->', evalPostfix(expr))
+    print(expr, '-->', evalPostfix(expr)) 

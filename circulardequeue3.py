@@ -26,7 +26,7 @@ class circulardequeue(CircularQueue):
             return e
         
     def getFront(self):
-        self.peek()
+        return self.peek()
         
     def getRear(self):
         if not self.isEmpty():
@@ -46,6 +46,8 @@ if __name__ == "__main__":
     for i in range(4):
         DQ.addRear(random.randint(65, 90))
     DQ.display()
-    
+    print()
+    print(DQ.getFront())
     DQ.deleteRear()
     DQ.display()
+    
