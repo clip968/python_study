@@ -36,10 +36,27 @@ class CircularQueue:
 if __name__ == "__main__":
     
     Q = CircularQueue()
-    Q.sortedqueue(4)
-    Q.sortedqueue(1)
-    Q.sortedqueue(2)
-    Q.sortedqueue(5)
-    Q.sortedqueue(6)
+    Q.enqueue('A')
+    Q.enqueue('D')
+    Q.enqueue('E')
+    Q.enqueue('C')
+    Q.enqueue('B')
     Q.display()
-        
+    print()
+    
+    print('Dequeue --> ', Q.dequeue())
+    print('Dequeue --> ', Q.dequeue())
+    print('Dequeue --> ', Q.dequeue())
+    Q.display()    
+    print()
+    
+    print('Peek --> ', Q.peek())
+    Q.display()
+    print()
+    
+    Q.enqueue('G')
+    Q.enqueue('T')
+    Q.enqueue('M')
+    Q.enqueue('P')
+    Q.display()
+    print()
