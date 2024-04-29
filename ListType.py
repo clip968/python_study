@@ -1,5 +1,5 @@
-from ListNode import ListNode
- 
+from Listnode import Listnode
+
 class ListType:
     def __init__(self):
          self.head = None
