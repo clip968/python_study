@@ -1,4 +1,4 @@
-from Listnode import ListNode
+from ListNode import ListNode
  
 class ListType:
     def __init__(self):
@@ -38,6 +38,26 @@ class ListType:
             else:
                 print('Invalid Position')
                 
+    def deleteFirst(self):
+        if not self.isEmpty():
+            p = self.head
+            p = p.next
+            self.head = p
+            self.size -= 1
+    
+    def delete(self, pos):
+        if not self.isEmpty():
+            if pos == 1:
+                self.deleteFirst()
+            else:
+                if(pos <= self.size):
+                    p = self.getNode(pos)
+                    p1 = self.getNode(pos + 1)
+                    p.next = p1.next
+                    self.size -= 1
+                    
+
+                
     def display(self):
         p = self.head
         
@@ -53,5 +73,10 @@ if __name__ == "__main__":
     L.insertFirst('A'); L.insertFirst('B'); L.display()
     L.insert(2, 'C'); L.insert(1, 'D'); L.insert(5, 'E'); L.display()
     L.insert(7, 'E')
-     
-     
+    L.deleteFirst()
+    L.display()
+    L.deleteFirst()
+    L.display()
+    L.delete(3)
+    L.display()
+    
