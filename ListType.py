@@ -41,9 +41,11 @@ class ListType:
     def deleteFirst(self):
         if not self.isEmpty():
             p = self.head
-            p = p.next
-            self.head = p
+            self.head = p.next
             self.size -= 1
+            return p.data
+        else:
+            print("No Elements")
     
     def delete(self, pos):
         if not self.isEmpty():
@@ -55,8 +57,13 @@ class ListType:
                     p1 = self.getNode(pos + 1)
                     p.next = p1.next
                     self.size -= 1
+                    return p1.data
+                else:
+                    print("Invaild Data")
+        else:
+            print("No Elements")
+            return
                     
-
                 
     def display(self):
         p = self.head
@@ -73,10 +80,7 @@ if __name__ == "__main__":
     L.insertFirst('A'); L.insertFirst('B'); L.display()
     L.insert(2, 'C'); L.insert(1, 'D'); L.insert(5, 'E'); L.display()
     L.insert(7, 'E')
-    L.deleteFirst()
-    L.display()
-    L.deleteFirst()
-    L.display()
-    L.delete(3)
-    L.display()
+    print('[%s] is deleted.' % L.deleteFirst()); L.display()
+    print('[%s] is deleted.' % L.delete(3)); L.display()
+
     
