@@ -19,7 +19,7 @@ def find_pi(data):
                     
     return pi
 
-def Quine_Mccluskey(minterms):
+def solution(minterms):
     numberCnt = {}
     number_binary = []
     for minterm in minterms:
@@ -46,5 +46,5 @@ def Quine_Mccluskey(minterms):
     return result
 
 minterms = [3, 6, 0, 1, 2, 5, 6, 7]
-result = Quine_Mccluskey(minterms)
+result = solution(minterms)
 print(result)
