@@ -27,6 +27,7 @@ def is_valid(a, b):
                 return False
    
     return diff_count == 1
+
 def find_pi(data, start, end, used):
     pi = dict()
     
@@ -49,6 +50,12 @@ def find_pi(data, start, end, used):
                         continue
                         
     return pi
+
+def Find_EPI(minterm, pi):
+    for i in range(len(minterm)):
+        if (pi[i] != '-' and minterm[i] != pi[i]):
+            return False
+    return True
 
 def solution(minterms):
     numberCnt = {}
@@ -90,7 +97,22 @@ def solution(minterms):
         
     merge_pi = list(chain.from_iterable(pi.values()))
     sorted_implicants = sorted(merge_pi, key=lambda implicant: implicant.replace('-', '2'))
-    return sorted_implicants
-
     
-
+    epi = set()
+    temp = []
+    
+    for i in range(len(number_binary)):
+        temp = []
+        for j in range(len(sorted_implicants)):
+            if (Find_EPI(number_binary[i], sorted_implicants[j])):
+                temp.append(j)
+        if len(temp) == 1:
+            epi.add(temp[-1])
+    
+    sorted_implicants.append("EPI")
+    for i in epi:
+        sorted_implicants.append(sorted_implicants[i])
+        
+    return sorted_implicants
+    
+    

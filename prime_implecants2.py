@@ -65,6 +65,7 @@ def solution(minterms):
             numberCnt[b] = []
         numberCnt[b].append(number)
     pi = numberCnt
+    
     while True:
         new_pi = dict()
         used = set()
@@ -91,6 +92,7 @@ def solution(minterms):
     merge_pi = list(chain.from_iterable(pi.values()))
     sorted_implicants = sorted(merge_pi, key=lambda implicant: implicant.replace('-', '2'))
     return sorted_implicants
-
     
 
+minterms = [3, 2, 0, 3]
+print(solution(minterms))
