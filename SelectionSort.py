@@ -34,6 +34,11 @@ def BubbleSort(L):
         for j in range(i):
             if(L[j] > L[j + 1]):
                 L[j] , L[j + 1] = L[j + 1], L[j]
+                bChanged = True
+        if not bChanged:
+            break
+        printStep(L, i)
+    
     
 if __name__ == "__main__":
     data = [5, 3, 8, 4, 9, 1, 6, 2, 7]
@@ -48,4 +53,10 @@ if __name__ == "__main__":
     print("before : ", L)
     insertionSort(L)
     print("Insertion :", L)
+    print()
+    
+    L = list(data)
+    print("before : ", L)
+    BubbleSort(L)
+    print("Bubble :", L)
     print()
