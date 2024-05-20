@@ -12,7 +12,7 @@ def selectionSort(L):
             if L[j] < L[least]:
                 least = j
         L[i], L[least] = L[least], L[i]
-        printStep(L, i + 1)
+        # printStep(L, i + 1)
         
 def insertionSort(L):
     n = len(L)
@@ -24,7 +24,7 @@ def insertionSort(L):
             L[j+1] = L[j]
             j -= 1
         L[j + 1] = key
-        printStep(L, i) 
+        # printStep(L, i) 
         
 def BubbleSort(L):
     n = len(L)
@@ -37,7 +37,7 @@ def BubbleSort(L):
                 bChanged = True
         if not bChanged:
             break
-        printStep(L, i)
+        # printStep(L, i)
     
     
 if __name__ == "__main__":
