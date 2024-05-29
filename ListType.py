@@ -1,4 +1,4 @@
-from Listnode import ListNode
+from ListNode import ListNode
  
 class ListType:
     def __init__(self):
