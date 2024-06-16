@@ -32,14 +32,45 @@ class HashTable:
                 print()
     #탐색과 삭제는 해보기
     
+    def delete(self, key):
+        b = self.hashFn(key)
+        n = self.table[b]
+        if n == None:
+            return 
+        
+        if n.data == key:
+            self.table[b] = self.table[b].next
+        
+        else:
+            prev = n
+            while n is not None:
+                if n.data == key:
+                    prev.next = n.next
+                    return 
+                prev = n
+                n = n.next
+            
+    
 if __name__ == "__main__":
-    import random
+    # import random
     
     HT = HashTable()
     
-    for i in range(20):
-        HT.insert(random.randint(10, 99))
+    # for i in range(20):
+    #     HT.insert(random.randint(10, 99))
     
+    # HT.display()
+    # HT.delete(25)
+    # HT.display()
+    HT.insert(10)
+    HT.insert(20)
+    HT.insert(30)
+    HT.insert(40)
+    HT.insert(50)
+    HT.insert(37)
     HT.display()
-        
+    print()
+    HT.delete(50)
+    HT.display()
+    print()
     

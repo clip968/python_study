@@ -66,7 +66,7 @@ class BinaryTree:
     def getHeight(self, node):
         if node == None:
             return 0
-        return max(self.getHeight(node.left), self.getHeight(node.right) + 1)
+        return max(self.getHeight(node.left), self.getHeight(node.right)) + 1
 
 if __name__ == "__main__":
     T = BinaryTree()
@@ -82,6 +82,7 @@ if __name__ == "__main__":
     print('In : ', end=''); T.inOrder(n1); print()
     print('Post : ', end=''); T.postOrder(n1); print()
     print('Level : ', end=''); T.levelOrder(n1); print()
+    print('Heigh : ', end=''); T.getHeight(n1); print()
 
     print("Node Count : %d" %T.nodeCount(n1))
     print("Leaf Count : %d" %T.leafCount(n1))

@@ -24,7 +24,7 @@ def insertionSort(L):
             L[j+1] = L[j]
             j -= 1
         L[j + 1] = key
-        # printStep(L, i) 
+        #printStep(L, i) 
         
 def BubbleSort(L):
     n = len(L)
