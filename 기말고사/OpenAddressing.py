@@ -17,6 +17,7 @@ def hashFn2(key):
 def getQuadratic(v, i):
     return (v + i*i) % M
 
+# 이중 해싱법
 def getDouble(v, i, key):
     return (v + i * hashFn2(key)) % M
 

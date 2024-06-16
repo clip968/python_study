@@ -1,6 +1,15 @@
 import random
 from SelectionSort import *
 
+def sequential_search(A, key):
+    low = 0
+    high = len(A) - 1
+    for i in range(low, high+1):
+        if A[i] == key:
+            return i
+    
+    return None
+
 def rBinarySearch(A, key, low, high):
     if(low > high): return -1
     
@@ -31,6 +40,25 @@ def iBinarySearch(A, key):
     
     return -1
 
+def interplation_Search(A, key):
+    low = 0
+    high = len(A) - 1
+    
+    while low <= high and key >= A[low] and key <= A[high]:
+        if low == high:
+            if A[low] == key:
+                return low
+            return -1
+        
+        pos = low + ((key - A[low]) * (high - low)) // (A[high] - A[low]) 
+        
+        if A[pos] == key:
+            return pos
+        elif A[pos] < key:
+            low = pos + 1
+        else:
+            high = pos - 1
+            
 if __name__ == "__main__":
     A = []
     for i in range(15):
@@ -43,3 +71,4 @@ if __name__ == "__main__":
     print('rBinary Search : %d' % rBinarySearch(A, key, 0, len(A)-1))
     
     print('iBinary Search : %d' % iBinarySearch(A, key))
+    

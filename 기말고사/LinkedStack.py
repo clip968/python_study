@@ -1,4 +1,4 @@
-from Listnode import ListNode
+from ListNode import ListNode
 
 class LinkedStack:
     def __init__(self):
