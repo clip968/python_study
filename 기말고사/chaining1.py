@@ -8,59 +8,68 @@ M = 13
 class HashTable:
     def __init__(self):
         self.table = [None] * M
+        
     
     def hashFn(self, key):
-        return key % M
+        return (key % M)
     
     def insert(self, key):
         b = self.hashFn(key)
-        node = Node(key)
+        node = Node(key, self.table[b])
         node.next = self.table[b]
         self.table[b] = node
         
     def display(self):
         for i in range(M):
-            print("HT[%02d] : " % i, end='')
+            print('HT[%2d] : ' % i, end='')
             n = self.table[i]
             
             if n == None:
                 print()
+                
             else:
-                while n is not None:
+                while n != None:
                     print(n.data, end=' ')
                     n = n.next
                 print()
-    #탐색과 삭제는 해보기
-    
+                
     def delete(self, key):
         b = self.hashFn(key)
         n = self.table[b]
-        if n == None:
-            return 
         
+        if n == None:
+            print('아무것도 없어용')
+            return
+
         if n.data == key:
             self.table[b] = n.next
-        
+            
         else:
             prev = n
             n = n.next
             while n is not None:
                 if n.data == key:
-                    prev.next = n.next
-                    return 
+                   prev.next = n.next
+                   return
                 prev = n
-                n = n.next
+                n = n.next 
     def search(self, key):
         b = self.hashFn(key)
         n = self.table[b]
         
-        while n != None:
-            if n.data == key:
-                return True
-            n = n.next
-            
+        if n == None:
+            return False
+        
+        elif n.data == key:
+            return True
+        
+        else:
+            while n != None:
+                if n.data == key:
+                    return True
+                n = n.next
+        
         return False
-    
 if __name__ == "__main__":
     # import random
     
@@ -82,6 +91,5 @@ if __name__ == "__main__":
     print()
     HT.delete(37)
     HT.display()
-    print(HT.search(37))
+    print(HT.search(50))
     print()
-    

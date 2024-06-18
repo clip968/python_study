@@ -24,7 +24,7 @@ class DListType:
     def addRear(self, data):
         node = DListNode(data, self.rear, None)
 
-        if self.size==0:
+        if self.size == 0:
             self.front = self.rear = node
         else:
             self.rear.next = node
@@ -84,7 +84,7 @@ class DListType:
         while p!=None:
             print("[%c] <-> " % p.data, end='')
             p = p.next
-        print("\b\b\b\b")
+        print("\b\b\b\b    ")
 
 if __name__ == "__main__":
     DL = DListType()

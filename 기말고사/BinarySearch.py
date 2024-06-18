@@ -26,7 +26,7 @@ def rBinarySearch(A, key, low, high):
 
 def iBinarySearch(A, key):
     low = 0
-    high = len(A)
+    high = len(A) - 1
     while(low <= high):
         mid = (low + high) // 2
         print(A[mid], end=' ')

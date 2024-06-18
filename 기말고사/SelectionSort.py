@@ -26,18 +26,25 @@ def insertionSort(L):
         L[j + 1] = key
         #printStep(L, i) 
         
-def BubbleSort(L):
-    n = len(L)
+        
+def bubbleSort(arr):
+    n = len(arr)
     
-    for i in range(n - 1, 0, -1):
-        bChanged = False
-        for j in range(i):
-            if(L[j] > L[j + 1]):
-                L[j] , L[j + 1] = L[j + 1], L[j]
-                bChanged = True
-        if not bChanged:
+    for i in range(n):
+        # 이미 정렬된 경우 루프를 조기에 종료하기 위한 플래그
+        swapped = False
+        
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                # 두 요소를 교환
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        
+        # 만약 내부 루프에서 요소가 교환되지 않았다면 리스트가 정렬된 상태임
+        if not swapped:
             break
-        # printStep(L, i)
+            
+    return arr
     
     
 if __name__ == "__main__":
@@ -57,6 +64,6 @@ if __name__ == "__main__":
     
     L = list(data)
     print("before : ", L)
-    BubbleSort(L)
+    bubbleSort(L)
     print("Bubble :", L)
     print()
