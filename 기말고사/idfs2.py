@@ -21,7 +21,7 @@ def iDFS(v):
         S.put(v)
         
         if visited[v] == False:
-            visited[v] = True
+            visited[v] = True  
             print(vertex[v], end=' ')
             
         flag = True
@@ -33,8 +33,7 @@ def iDFS(v):
             
         if flag == True:
             S.get()
-                    
-
+            
 if __name__ == "__main__":
     print('iDFS(A) : ', end='')
     iDFS(0)

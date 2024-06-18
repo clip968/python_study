@@ -16,35 +16,35 @@ INF = 100
 dist = [INF] * len(Graph)
 visited = [False] * len(Graph)
 
-def findMn():
+def findMin():
     minDist = INF
     minV = 0
-    for v in range(len(dist)):
-        if visited[v] == False and dist[v] < minDist:
+    
+    for v in range(len(Graph)):
+        if visited[v] == False and minDist > dist[v]:
             minDist = dist[v]
             minV = v
-
     return minV
 
 def prim(vName):
     vCnt = len(Graph)
-    dist[ord(vName)-65] = 0
+    dist[ord(vName) - 65] = 0
     
     for i in range(vCnt):
         for j in range(vCnt):
-            print('%3d ' %dist[j], end='')
+            print('%3d ' % dist[j], end='')
+            
         print()
         
-        vNum = findMn()
+        vNum = findMin()
         vName = chr(vNum + 65)
-        
-        visited[vNum] = True    
+        visited[vNum] = True
         
         for e in Graph[vName]:
-            vNum = ord(e[0])-65
+            vNum = ord(e[0]) - 65
             if visited[vNum] == False and e[1] < dist[vNum]:
                 dist[vNum] = e[1]
-        
-            
+                
 if __name__ == "__main__":
     prim('C')
+    

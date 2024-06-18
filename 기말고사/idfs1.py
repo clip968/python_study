@@ -18,23 +18,23 @@ def iDFS(v):
     
     while not S.empty():
         v = S.get()
-        S.put(v)
         
         if visited[v] == False:
             visited[v] = True
             print(vertex[v], end=' ')
             
-        flag = True
-        for i in AdjVer[v]:
-            if visited[i] == False:
-                S.put(i)
-                flag = False
-                break
-            
-        if flag == True:
-            S.get()
+            flag = False
+            for i in AdjVer[v]:
+                if visited[i] == False:
+                    S.put(i)
+                    flag = True
+                    
+            if flag == False:
+                if not S.empty():
+                    v = S.get()
+                    S.put(v)
                     
 
 if __name__ == "__main__":
     print('iDFS(A) : ', end='')
-    iDFS(0)
+    iDFS(0)      
